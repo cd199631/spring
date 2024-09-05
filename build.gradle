@@ -1,3 +1,10 @@
+buildscript{
+	repositories {
+		maven { url 'https://repo.spring.io/plugins-release-local' }
+	}
+}
+
+
 plugins {
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE' apply false
 	id 'io.spring.ge.conventions' version '0.0.7'
@@ -277,6 +284,10 @@ configure(allprojects) { project ->
 			cacheChangingModulesFor 0, "seconds"
 		}
 		repositories {
+			maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+			maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
+
+			maven { url "https://repo.springsource.org/plugins-release" }
 			mavenCentral()
 			maven { url "https://repo.spring.io/libs-spring-framework-build" }
 		}
